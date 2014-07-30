@@ -1046,11 +1046,9 @@ static int __devinit adc_probe(struct platform_device *pdev)
 	input_set_abs_params(kp->input_joystick, ABS_HAT0Y, -256, 255, 0, 0);
 #endif
 
-	//kp->input_joystick->name = "Microsoft X-Box 360";
-	kp->input_joystick->name = "PLAYSTATION(R)3";
-	//kp->input_joystick->name = "OUYA Game Controller";
-	//kp->input_joystick->name = "NVIDIA Controller";
-	//kp->input_joystick->name = "ADC joystick";
+
+	kp->input_joystick->name = "GPD-joy";
+
 	kp->input_joystick->rep[REP_DELAY]=0xffffffff;
 	kp->input_joystick->rep[REP_PERIOD]=0xffffffff;
 	kp->input_joystick->keycodesize = sizeof(unsigned short);
