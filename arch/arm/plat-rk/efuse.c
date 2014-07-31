@@ -114,6 +114,11 @@ int rk_pll_flag(void)
 int rk_tflag(void)
 {
 	return efuse_buf[22] & (0x1 << 3);
+	char *cputype = tflag ? "RK3188T" : "RK3188";
+	printk(KERN_INFO "Skelton: CPU is ROCKCHIP %s\n", cputype);
+	printk(KERN_INFO "Skelton: eFuses are set to (22) = 0x%02x and (23) = 0x%02x\n", efuse_buf[22], efuse_buf[23]);
+
+	return tflag;
 }
 
 int efuse_version_val(void)
